@@ -62,7 +62,7 @@ class controlador {
         FROM factura
         INNER JOIN clientes  ON factura.cedula = clientes.cedula
         INNER JOIN producto  ON factura.codigo = producto.codigo
-        WHERE producto.codigo = '".$id."' OR clientes.cedula = '".$id."'";
+        WHERE producto.codigo = '".$id."' OR clientes.cedula = '".$id."' OR factura.fecha = '".$id."'";
         $resultado = $db->query($query);
         $datos = []; //inicializo array datos
         $valorfinal = 0;
